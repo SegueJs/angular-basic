@@ -1,0 +1,13 @@
+.product-list{
+  display: flex;
+  flex-flow: column;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 700px){
+  .product-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

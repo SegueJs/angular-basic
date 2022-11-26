@@ -1,0 +1,12 @@
+<div class="product-card" >
+  <img [src]="product.img" width="100" />
+  <div class="content-card">
+    <p>
+      {{product.name}}
+    </p>
+    <p>
+      ${{product.price}}
+    </p>
+    <button (click)="delProduct()" >Delete</button>
+  </div>
+</div>

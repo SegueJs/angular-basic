@@ -1,0 +1,8 @@
+<form (ngSubmit)="addProduct()" #form="ngForm" >
+  <input placeholder="Nombre" type="text" [(ngModel)]="product.name" name="name" required />
+  <input placeholder="Precio" type="number" [(ngModel)]="product.price" name="price" required />
+  <input placeholder="URL imagen" type="text" [(ngModel)]="product.img" name="img" required />
+  <button type="submit" [disabled]="form.invalid" >
+    Agregar
+  </button>
+</form>

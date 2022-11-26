@@ -1,14 +1,12 @@
-import { Component } from '@angular/core';
-import { Product } from './models/product.model';
+import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
 })
-export class AppComponent {
-  imgParent = 'my-store';
-  loaded = 'Nada'
+export class ProductsComponent implements OnInit {
 
   products: Product[] = [
     {
@@ -49,7 +47,18 @@ export class AppComponent {
     },
   ];
 
-  onLoaded(img: string) {
-    this.loaded = img
+  constructor() { }
+
+  ngOnInit(): void {
   }
+
+  addToList(product: Product) {
+    this.products.unshift(product)
+  }
+
+  delFromList(index: number) {
+    this.products.splice(index, 1)
+  }
+
+
 }

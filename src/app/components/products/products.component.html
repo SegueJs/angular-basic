@@ -1,0 +1,5 @@
+<app-form (newProduct)="addToList($event)" ></app-form>
+<div class="product-list">
+  <app-product (indexToDelete)="delFromList($event)" *ngFor="let product of products; let i = index" [product]="product" [index]="i" ></app-product>
+</div>
+<p *ngIf="products.length<=0" >There's no products now</p>
